@@ -1,9 +1,8 @@
 package org.example;
 
-import java.awt.geom.Arc2D;
 import java.util.ArrayList;
 
-public class Box<T, V extends Double> implements BoxOperations{
+public class Box<T, V extends Number> implements BoxOperations{
     private T genericAttribute;
     private V largestValue;
     private String name;
@@ -31,7 +30,7 @@ public class Box<T, V extends Double> implements BoxOperations{
     };
 
 
-    public void setLargestValue (V value1,V value2) {
+    /*public void setLargestValue (V value1,V value2) {
 
         // Compare the two values as "doubadded logic to setLargestValue in Boxle", sets the largest value as a V type
         if(value1.doubleValue() > value2.doubleValue()){
@@ -45,7 +44,7 @@ public class Box<T, V extends Double> implements BoxOperations{
         //this.largestValue = value1.doubleValue() > value2.doubleValue() ?  value1 : value2;
 
         ;
-    }
+    }*/
 
     @Override
     public V getLargestValue() {
@@ -62,4 +61,15 @@ public class Box<T, V extends Double> implements BoxOperations{
             this.largestValue = (V) value2;
         }
     }
+
+    // Checks to see if a Box shares a name with a previously created Box
+    public boolean hasSameName(Box<?,V> box ){
+
+        return boxNames.contains(this.name);
+    };
+
+
+
+
+
 }
