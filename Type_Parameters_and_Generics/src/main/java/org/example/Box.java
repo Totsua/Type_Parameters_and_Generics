@@ -12,9 +12,9 @@ public class Box<T, V extends Number & Comparable<V>> implements BoxOperations{
     // Static list of all box names
     public static ArrayList<String> boxNames= new ArrayList<>();
 
-    public Box(T genericAttribute, V largestValue, String name) {
-        this.genericAttribute = genericAttribute;
-        this.largestValue = largestValue;
+    public Box(String name) {
+//        this.genericAttribute = genericAttribute;
+//        this.largestValue = largestValue;
         this.name = name;
 
         // Everytime a Box object is created we'll keep track of all the names
@@ -31,6 +31,9 @@ public class Box<T, V extends Number & Comparable<V>> implements BoxOperations{
         this.genericAttribute = genericAttribute;
     };
 
+    public String getName() {
+        return name;
+    };
 
     /*public void setLargestValue (V value1,V value2) {
 
@@ -73,10 +76,10 @@ public class Box<T, V extends Number & Comparable<V>> implements BoxOperations{
         return (T) bs;
     }
 
-    public V setLargestValueFromList(Collection list ){
-        largestValue = (V)Collections.max(list);
-
-        return this.largestValue;
+    // setter to set largest value from List input
+    @Override
+    public void setLargestValueFromList(Collection list ){
+        this.largestValue = (V)Collections.max(list);
     };
 
 

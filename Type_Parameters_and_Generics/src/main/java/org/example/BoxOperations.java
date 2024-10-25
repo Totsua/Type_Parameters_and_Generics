@@ -8,6 +8,6 @@ public interface BoxOperations<V extends Number> {
 
     void setLargestValue(V value1, V value2);
 
-    V setLargestValueFromList(Collection list);
+    void setLargestValueFromList(Collection list);
 
 }
