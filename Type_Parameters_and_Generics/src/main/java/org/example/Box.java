@@ -1,6 +1,8 @@
 package org.example;
 
-public class Box<T, V> {
+import java.awt.geom.Arc2D;
+
+public class Box<T, V extends Double> {
     private T genericAttribute;
     private V largestValue;
 
@@ -17,6 +19,19 @@ public class Box<T, V> {
         this.genericAttribute = genericAttribute;
     };
 
+    public void setLargestValue (V value1,V value2) {
 
+        // Compare the two values as "double", sets the largest value as a V type
+        if(value1.doubleValue() > value2.doubleValue()){
+            this.largestValue = value1;
+        }
+        else{
+            this.largestValue = value2;
+        }
 
+        // Same thing but in one line
+        //this.largestValue = value1.doubleValue() > value2.doubleValue() ?  value1 : value2;
+
+        ;
+    }
 }
