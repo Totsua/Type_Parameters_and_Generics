@@ -64,10 +64,12 @@ public class Box<T, V extends Number> implements BoxOperations{
 
     // Checks to see if a Box shares a name with a previously created Box
     public boolean hasSameName(Box<?,V> box ){
-
         return boxNames.contains(this.name);
     };
 
+    public T castValue(String bs){
+        return (T) bs;
+    }
 
 
 
