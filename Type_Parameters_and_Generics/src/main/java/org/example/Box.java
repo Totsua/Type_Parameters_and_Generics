@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Box<T, V extends Number> implements BoxOperations{
     private T genericAttribute;
@@ -71,7 +73,13 @@ public class Box<T, V extends Number> implements BoxOperations{
         return (T) bs;
     }
 
+    public V setLargestValueFromList(List list){
 
+       // largestValue = Collections.max(list);
+
+
+        return this.largestValue;
+    };
 
 
 }
